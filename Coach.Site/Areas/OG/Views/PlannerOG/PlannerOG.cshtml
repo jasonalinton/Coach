@@ -1,0 +1,45 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "PlannerOG";
+}
+
+<script src="/Areas/OG/Scripts/ViewScripts/PlannerOG/plannerOG.js"></script>
+<link rel="stylesheet" href="/Areas/OG/Content/Styles/PlannerOG/plannerOG.css" />
+
+@Html.Partial("/Areas/OG/Views/PlannerOG/_MealEventOG.cshtml")
+
+<div class="container-fluid">
+    <div class="row no-gutters">
+        <div class="col-auto">
+            <div id="planner-container" data-toggle="collapse show">
+                <div id="planner"></div>
+            </div>
+        </div>
+        <div class="col">
+            <div id="event-container">
+                <div id="event-info"></div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+        <div id="edit-buttons" class="d-none d-md-block d-flex justify-content-center align-content-center">
+            <input id="allow-event-edit" type="checkbox" /><label for="allow-event-edit">Events to be edited</label>
+            <input id="show-delete-task-alart" type="checkbox" checked /><label for="show-delete-task-alart">Show delete task alert</label>
+        </div>
+    </div>
+</div>
+
+<script id="event-template" type="text/x-kendo-template">
+    <div class="event-div" data-eventid="#:idEvent#" data-mealid="#:MealID#" data-eventType="#:EventType#" data-type="#:Type#" onclick="eventDiv_Clicked(this)">
+        <div>#: title #</div>
+    </div>
+</script>
+
+<script id="result-grid-footer-template" type="text/x-kendo-template">
+    <div class="result-footer-container" style="height:34px;">
+        <button class='select-meal-results btn btn-primary' type='button' onclick='onAddMealResultsClicked(this)' style="display: none;">Add</button>
+    </div>
+</script>

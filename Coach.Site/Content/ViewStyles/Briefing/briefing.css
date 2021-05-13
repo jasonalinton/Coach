@@ -1,0 +1,73 @@
+body {
+}
+
+.briefing-view-container {
+    padding: 10px 30px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .briefing-view-container {
+        padding: 10px 30px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .briefing-view-container {
+        padding: 10px 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .briefing-view-container {
+        padding: 10px 10px;
+    }
+}
+
+    .briefing-view-container .k-calendar {
+        margin-bottom: 15px;
+        align-self: center;
+        text-align: center;
+    }
+
+    .briefing-view-container h1 {
+        margin-bottom: 30px;
+    }
+
+    .briefing-view-container .briefing-container h2 {
+        /* text-decoration: underline; */
+        color: forestgreen;
+        margin-bottom: 10px;
+    }
+
+    .briefing-view-container .briefing-container textarea {
+        width: 100%;
+    }
+
+    .briefing-view-container .briefing-container .k-editor .k-editable-area .k-content {
+        border: none;
+    }
+
+    .briefing-view-container .briefing-container .inventory-item-save-group {
+        justify-content: space-between;
+    }
+
+        .briefing-view-container .briefing-container .inventory-item-save-group select.inventory-item {
+            font-size: 24px;
+        }
+
+        .briefing-view-container .briefing-container .inventory-item-save-group button.save {
+            height: 48px;
+            align-self: auto;
+            /* float: right; */
+        }
+
+    .briefing-view-container .briefing-container .textblocks.flex-container {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .briefing-view-container .briefing-container .textblock.flex-container {
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 5px;
+    }

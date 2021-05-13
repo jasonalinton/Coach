@@ -1,0 +1,77 @@
+﻿.k-upload-selected {
+    display: none;
+}
+
+#fieldlist {
+    margin: 0;
+    padding: 0;
+}
+
+    #fieldlist li {
+        list-style: none;
+        padding-bottom: .7em;
+        text-align: left;
+    }
+
+    #fieldlist label {
+        display: block;
+        padding-bottom: .3em;
+        font-weight: bold;
+    }
+
+    #fieldlist li.status {
+        text-align: center;
+    }
+
+    #fieldlist li .k-widget:not(.k-tooltip),
+    #fieldlist li .k-textbox {
+        margin: 0 5px 5px 0;
+    }
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+#fieldlist li input[type="checkbox"] {
+    margin: 0 5px 0 0;
+}
+
+span.k-widget.k-tooltip-validation {
+    display: inline-block;
+    width: 180px;
+    text-align: left;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+    color: red;
+}
+
+.k-tooltip-validation .k-warning {
+    display: none;
+}
+
+/*Allow horizontal scrolling when grid scrolling set to false*/
+.k-grid-header {
+    padding: 0 !important;
+}
+
+.k-grid-content {
+    overflow-y: visible;
+}
+
+.wrapUp {
+    clear: both;
+    text-align: right;
+    border-width: 1px 0 0;
+    border-style: solid;
+    position: relative;
+    bottom: -0.5em;
+    padding-top: 0.6em;
+    padding-right: 0.6em;
+}

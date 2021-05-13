@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Nutrition";
+}
+
+<link href="~/Content/ViewStyles/Nutrition/nutrition.css" rel="stylesheet" />
+<script src="~/Scripts/ViewScripts/Nutrition/nutrition.js"></script>
+
+@Html.Partial("/Views/Timeline/Timeline.cshtml")
+
+<div id="nutrition-info-container"></div>
+<script id="nutrition-info-template" type="text/x-kendo-template">
+    <div class="row no-gutters">
+        <div class="col">
+            <div class="nutrition-info">
+                <div class="row no-gutters header">
+                    <div class="col">
+                        <h1>Nutrition</h1>
+                    </div>
+                </div>
+                <div class="row no-gutters body">
+                    <div class="col">
+                        <div class="calorie panel">
+                            <div class="values">
+                                <div class="consumed">
+                                    <div class="amount">#:Calorie.Remaining#</div>
+                                    <div class="label">Remaining</div>
+                                </div>
+                                <div class="recommended">
+                                    <div class="amount">#:Calorie.Recommended#</div>
+                                    <div class="label">Recommended</div>
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <img class="calorie-flame" src="/Content/ViewImages/Nutrition/flame.png" alt="Calorie Flame" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="remaining panel">
+                            <div class="calorie">
+                                <div class="amount w-100">
+                                    #:Calorie.Consumed#
+                                </div>
+                                <div class="calorie label w-100">
+                                    Calories
+                                </div>
+                                <div class="remaining label w-100">
+                                    Consumed
+                                </div>
+                            </div>
+                            <div class="water">
+                                <div class="amount w-100">
+                                    #:Water.Consumed#
+                                </div>
+                                <div class="water label w-100">
+                                    Water
+                                </div>
+                                <div class="remaining label w-100">
+                                    Consumed
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="water panel">
+                            <div class="values">
+                                <div class="consumed">
+                                    <div class="amount">#:Water.Remaining#</div>
+                                    <div class="label">Remaining</div>
+                                </div>
+                                <div class="recommended">
+                                    <div class="amount">#:Water.Recommended#</div>
+                                    <div class="label">Recommended</div>
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <img class="water-droplet" src="/Content/ViewImages/Nutrition/water-droplet.png" alt="Water Droplet" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<div class="meal-event-container"></div>
+<script id="meal-event-template" type="text/x-kendo-template">
+    <div class="row no-gutters">
+        <div class="col">
+            <div class="meal-event-shadow">
+                <div class="meal-event">
+                    <div class="row no-gutters header">
+                        <div class="col">
+                            <h1>#:Name#</h1>
+                        </div>
+                    </div>
+                    <div class="row no-gutters body">
+                        <div class="col">
+                            <div class="calorie panel m-auto d-flex justify-content-end">
+                                <div>
+                                    <div class="image-container">
+                                        <img class="calorie-flame" src="/Content/ViewImages/Nutrition/flame.png" alt="Calorie Flame" />
+                                    </div>
+                                    <div class="percent consumed">#:Calorie.Percent#%</div>
+                                </div>
+                                <div class="consumed recommended">
+                                    <div class="consumed">#:Calorie.Consumed#</div><div class="recommended">/#:Calorie.Recommended# cal</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="macros panel m-auto d-flex flex-column justify-content-center align-items-center">
+                                <div class="header d-flex justify-content-between">
+                                    <span>Carbs</span>
+                                    <span>Prot</span>
+                                    <span>Fat</span>
+                                </div>
+                                <div class="percent recommended d-flex">
+                                    <span class="carbs" style="width:47%;">47%</span>
+                                    <span class="prot" style="width:26%;">26%</span>
+                                    <span class="fat" style="width:27%;">27%</span>
+                                </div>
+                                <div class="percent consumed d-flex">
+                                    <span class="carbs" style="width:47%;">47%</span>
+                                    <span class="prot" style="width:26%;">26%</span>
+                                    <span class="fat" style="width:27%;">27%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="water panel m-auto d-flex justify-content-start">
+                                <div class="consumed recommended">
+                                    <div class="recommended">/#:Water.Recommended# cal</div>
+                                    <div class="consumed">#:Water.Consumed#</div>
+                                </div>
+                                <div>
+                                    <div class="image-container">
+                                        <img class="water-droplet" src="/Content/ViewImages/Nutrition/water-droplet.png" alt="Water Droplet" />
+                                    </div>
+                                    <div class="percent consumed">
+                                        #:Water.Percent#%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+

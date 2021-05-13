@@ -1,0 +1,105 @@
+
+.left-panel {
+    width: 300px;
+    padding: 10px;
+}
+
+.right-panel {
+    width: 400px;
+    padding: 10px;
+}
+
+.day-col {
+    min-width: 250px;
+}
+
+    .day-col ul.task-list {
+        border-right: solid #D8D8D8 1px;
+    }
+
+    .day-col .date-label {
+        width: 56px;
+        /* height: 60px; */
+    }
+
+        .day-col .date-label .day {
+            color: #70757a;
+            width: 46px;
+            text-align: center;
+        }
+
+    .day-col[data-era="present"] .date-label .day {
+        color: #1A73E8;
+    }
+
+    .day-col[data-era="past"] .date-label .day {
+        color: #70757a;
+    }
+
+        .day-col .date-label .date-icon {
+            font-size: 25px;
+            font-weight: bold;
+            width: 46px;
+            height: 46px;
+            border-radius: 25px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 46px;
+        }
+
+    .day-col[data-era="present"] .date-label .date-icon {
+        color: white;
+        background-color: #1A73E8;
+    }
+
+    .day-col[data-era="past"] .date-label .date-icon {
+        color: white;
+        background-color: #70757a;
+    }
+
+.task-list {
+    min-height: 30px;
+    margin-top: 10px;
+    padding: 0px;
+    padding-right: 10px;
+}
+
+    .task-list .task {
+        color: white;
+        border-radius: 5px;
+        background-color: #F4501F;
+        margin-bottom: 2px;
+        padding-left: 7px;
+        padding-top: 1px;
+    }
+
+        .task-list .task.complete, .task-list .task.attempted {
+            color: black;
+            background-color: #FCCBBC;
+            text-decoration: line-through;
+        }
+
+        .task-list .task .task-icon {
+            margin-right: 5px;
+            line-height: 24px;
+            padding-bottom: 3px;
+        }
+
+.unplanned .todo-list li, .hierarchical-todo {
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 2px 5px;
+}
+
+    .hierarchical-todo.scheduled {
+        color: white;
+        border-radius: 5px;
+        background-color: #F4501F;
+    }
+
+    .unplanned .todo-list li, .hierarchical-todo.complete, .hierarchical-todo.attempted {
+        color: black;
+        background-color: #FCCBBC;
+        text-decoration: line-through;
+    }

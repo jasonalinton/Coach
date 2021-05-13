@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/bundles/css/bootstrap")
+    @Styles.Render("~/bundles/css/fontAwesome")
+    @Styles.Render("~/bundles/css/kendoUI")
+    @Styles.Render("~/bundles/css/global")
+
+    @Scripts.Render("~/bundles/js/modernizr")
+    @Scripts.Render("~/bundles/js/jquery")
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/js/bootstrap")
+    @Scripts.Render("~/bundles/js/kendoUI")
+    @Scripts.Render("~/bundles/js/global")
+    @RenderSection("scripts", required: false)
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/Home">Home</a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <!-- Planner (Dropdown) -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Planner
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item pl-0 text-nowrap" href="/OG/Planner/Planner">
+                        <!-- OG Planner -->
+                        <i class="fad fa-calendar-exclamation"></i> <!-- Icon -->
+                        <span class="font-weight-bold d-none d-md-inline">OG Planner</span> <!-- Tab Text -->
+                    </a>
+                    <a class="dropdown-item pl-0 text-nowrap" href="/Planner1/TodoPlanner">
+                        <!-- Todo Planner -->
+                        <i class="fad fa-calendar-week"></i> <!-- Icon -->
+                        <span class="font-weight-bold d-none d-md-inline">Todo Planner</span> <!-- Tab Text -->
+                    </a>
+                </div>
+            </li>
+
+            <!-- Planner -->
+            <li class="nav-item">
+                <a class="nav-link pl-0 text-nowrap" href="/OG/Planner/Planner">
+                    <!-- URL -->
+                    <i class="fad fa-yin-yang"></i> <!-- Icon -->
+                    <span class="font-weight-bold d-none d-md-inline">Planner</span> <!-- Tab Text -->
+                </a>
+            </li>
+            <!-- Briefing -->
+            <li class="nav-item">
+                <a class="nav-link pl-0 text-nowrap" href="/Briefing/Briefing">
+                    <!-- URL -->
+                    <i class="fad fa-book-open"></i> <!-- Icon -->
+                    <span class="font-weight-bold d-none d-md-inline">Briefing</span> <!-- Tab Text -->
+                </a>
+            </li>
+            <!-- Sleep -->
+            <li class="nav-item">
+                <a class="nav-link pl-0 text-nowrap" href="/Sleep/Sleep">
+                    <!-- URL -->
+                    <i class="fad fa-snooze"></i> <!-- Icon -->
+                    <span class="font-weight-bold d-none d-md-inline">Sleep</span> <!-- Tab Text -->
+                </a>
+            </li>
+            <!-- Nutrition -->
+            <li class="nav-item">
+                <a class="nav-link pl-0 text-nowrap" href="/Nutrition/Nutrition">
+                    <!-- URL -->
+                    <i class="fad fa-stomach"></i> <!-- Icon -->
+                    <span class="font-weight-bold d-none d-md-inline">Nutrition</span> <!-- Tab Text -->
+                </a>
+            </li>
+            <!-- Exercise -->
+            <li class="nav-item">
+                <a class="nav-link pl-0 text-nowrap" href="/Exercise/Exercise">
+                    <!-- URL -->
+                    <i class="fad fa-running"></i> <!-- Icon -->
+                    <span class="font-weight-bold d-none d-md-inline">Exercise</span> <!-- Tab Text -->
+                </a>
+            </li>
+            <!-- Routine -->
+            <li class="nav-item">
+                <a class="nav-link pl-0 text-nowrap" href="/Routine/Routine">
+                    <!-- URL -->
+                    <i class="fad fa-calendar-week"></i> <!-- Icon -->
+                    <span class="font-weight-bold d-none d-md-inline">Routine</span> <!-- Tab Text -->
+                </a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Inventory
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item pl-0 text-nowrap" href="/InventoryItems">
+                        <!-- Inventory Itmes -->
+                        <i class="fad fa-yin-yang"></i> <!-- Icon -->
+                        <span class="font-weight-bold d-none d-md-inline">Inventory Items</span> <!-- Tab Text -->
+                    </a>
+                    <a class="dropdown-item pl-0 text-nowrap" href="/Goals">
+                        <!-- Goals -->
+                        <i class="fad fa-yin-yang"></i> <!-- Icon -->
+                        <span class="font-weight-bold d-none d-md-inline">Goals</span> <!-- Tab Text -->
+                    </a>
+                    <a class="dropdown-item pl-0 text-nowrap" href="/Todoes">
+                        <!-- Todos -->
+                        <i class="fad fa-yin-yang"></i> <!-- Icon -->
+                        <span class="font-weight-bold d-none d-md-inline">Todos</span> <!-- Tab Text -->
+                    </a>
+                </div>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Mockup
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item pl-0 text-nowrap" href="/Todo/GetTodoMockupModel">
+                        <!-- Todo -->
+                        <i class="fad fa-yin-yang"></i> <!-- Icon -->
+                        <span class="font-weight-bold d-none d-md-inline">Todo</span> <!-- Tab Text -->
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+
+
+
+
+    @*<nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+            <div class="collapse navbar-collapse ">
+                <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                    <!-- Planner -->
+                    <li class="nav-item">
+                        <a class="nav-link pl-0 text-nowrap" href="/OG/Planner/Planner">
+                            <!-- URL -->
+                            <i class="fad fa-yin-yang"></i> <!-- Icon -->
+                            <span class="font-weight-bold d-none d-md-inline">Planner</span> <!-- Tab Text -->
+                        </a>
+                    </li>
+                    <!-- Briefing -->
+                    <li class="nav-item">
+                        <a class="nav-link pl-0 text-nowrap" href="/Briefing/Briefing">
+                            <!-- URL -->
+                            <i class="fad fa-book-open"></i> <!-- Icon -->
+                            <span class="font-weight-bold d-none d-md-inline">Briefing</span> <!-- Tab Text -->
+                        </a>
+                    </li>
+                    <!-- Sleep -->
+                    <li class="nav-item">
+                        <a class="nav-link pl-0 text-nowrap" href="/Sleep/Sleep">
+                            <!-- URL -->
+                            <i class="fad fa-snooze"></i> <!-- Icon -->
+                            <span class="font-weight-bold d-none d-md-inline">Sleep</span> <!-- Tab Text -->
+                        </a>
+                    </li>
+                    <!-- Nutrition -->
+                    <li class="nav-item">
+                        <a class="nav-link pl-0 text-nowrap" href="/Nutrition/Nutrition">
+                            <!-- URL -->
+                            <i class="fad fa-stomach"></i> <!-- Icon -->
+                            <span class="font-weight-bold d-none d-md-inline">Nutrition</span> <!-- Tab Text -->
+                        </a>
+                    </li>
+                    <!-- Exercise -->
+                    <li class="nav-item">
+                        <a class="nav-link pl-0 text-nowrap" href="/Exercise/Exercise">
+                            <!-- URL -->
+                            <i class="fad fa-running"></i> <!-- Icon -->
+                            <span class="font-weight-bold d-none d-md-inline">Exercise</span> <!-- Tab Text -->
+                        </a>
+                    </li>
+                    <!-- Routine -->
+                    <li class="nav-item">
+                        <a class="nav-link pl-0 text-nowrap" href="/Routine/Routine">
+                            <!-- URL -->
+                            <i class="fad fa-calendar-week"></i> <!-- Icon -->
+                            <span class="font-weight-bold d-none d-md-inline">Routine</span> <!-- Tab Text -->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>*@
+
+    <div class="container-fluid">
+
+
+
+
+
+
+
+
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    @Html.Hidden("FeaturePath", ((string)ViewBag.FeaturePath), new { id = "feature-path" })
+    @Html.AntiForgeryToken()
+</body>
+
+@*<body>
+    <div class="container-fluid body-content">
+        <div class="row min-vh-100 flex-column flex-md-row">
+            <aside class="col-12 col-md-2 p-0 bg-dark flex-shrink-1">
+                <div class="row calendar-container">
+                    <div class="col">
+                        <div id="navbar-calendar"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="bg-faded flex-grow-1">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    @Html.Hidden("FeaturePath", ((string)ViewBag.FeaturePath), new { id = "feature-path" })
+    @Html.AntiForgeryToken()
+</body>*@
+</html>

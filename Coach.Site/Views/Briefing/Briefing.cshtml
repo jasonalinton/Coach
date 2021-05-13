@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Briefing";
+}
+
+<link href="~/Content/ViewStyles/Briefing/briefing.css" rel="stylesheet" />
+<script src="~/Scripts/ViewScripts/Briefing/briefing.js"></script>
+
+<div class="row">
+    <div class="col">
+        <div class="briefing-view-container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-lg-5 col-xl-4">
+                    <div class="d-flex justify-content-center">
+                        <h1 id="selected-date"></h1>
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg col-xl">
+                    <div id="briefing-container" class="briefing-container"></div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg col-xl">
+                    <div id="debriefing-container" class="briefing-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="briefing-template" type="application/json">
+    <h2>Briefing</h2><!-- Briefing -->
+    <div class="inventory-item-save-group flex-container">
+        <!-- Inventory Item DropDown-->
+        <div class="form-group">
+            <select id="briefing-inventory-item" class="inventory-item form-control">
+                <option value="1">Physical</option>
+                <option value="2">Social</option>
+                <option value="3">Mental</option>
+                <option value="4">Emotional</option>
+                <option value="5">Financial</option>
+            </select>
+        </div>
+        <button class="save btn btn-primary" type="button" onclick="saveBriefing('Briefing')">Save</button><!-- Save Button -->
+    </div>
+    <textarea id="briefing-textarea" class="briefing form-control" rows="5"></textarea>
+    <div class="textblocks flex-container">
+        # $(Briefings).each(function (index, briefing) { #
+        <div>
+            <h4>#:briefing.InventoryItem#</h4>
+            <div class="textblock flex-container">
+                <h6>#:briefing.Time#</h6>
+                <div>#=htmlDecode(briefing.Text)#</div>
+            </div>
+        </div>
+        # }); #
+    </div>
+</script>
+
+
+<script id="debriefing-template" type="application/json">
+    <h2>Debriefing</h2><!-- Debriefing -->
+    <div class="inventory-item-save-group flex-container">
+        <!-- Inventory Item DropDown-->
+        <div class="form-group">
+            <select id="debriefing-inventory-item" class="inventory-item form-control">
+                <option value="1">Physical</option>
+                <option value="2">Social</option>
+                <option value="3">Mental</option>
+                <option value="4">Emotional</option>
+                <option value="5">Financial</option>
+            </select>
+        </div>
+        <button class="save btn btn-primary" type="button" onclick="saveBriefing('Debriefing')">Save</button><!-- Save Button -->
+    </div>
+    <textarea id="debriefing-textarea" class="briefing form-control" rows="5"></textarea>
+    <div class="textblocks flex-container">
+        # $(Debriefings).each(function (index, debriefing) { #
+        <div>
+            <h4>#:debriefing.InventoryItem#</h4>
+            <div class="textblock flex-container">
+                <h6>#:debriefing.Time#</h6>
+                <div>#=htmlDecode(debriefing.Text)#</div>
+            </div>
+        </div>
+        # }); #
+    </div>
+</script>

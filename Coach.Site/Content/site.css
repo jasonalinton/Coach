@@ -1,0 +1,130 @@
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: 'SF Compact Rounded Regular';
+    min-height: 100vh;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    
+}
+
+@font-face {
+    font-family: "SF Compact Rounded Light";
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Black.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Heavy.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Semibold.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Thin.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Ultralight.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Regular.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Bold.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Medium.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Light.otf");
+    /*src: url("css/fonts/Harabara.woff") format("woff"), url("css/fonts/Harabara.otf") format("opentype"), url("css/fonts/Harabara.svg#filename") format("svg");*/
+}
+
+@font-face {
+    font-family: "SF Compact Rounded Medium";
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Black.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Heavy.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Light.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Semibold.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Thin.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Ultralight.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Regular.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Bold.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Medium.otf");
+    /*src: url("css/fonts/Harabara.woff") format("woff"), url("css/fonts/Harabara.otf") format("opentype"), url("css/fonts/Harabara.svg#filename") format("svg");*/
+}
+
+@font-face {
+    font-family: "SF Compact Rounded Regular";
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Black.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Heavy.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Light.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Semibold.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Thin.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Ultralight.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Bold.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Medium.otf");
+    src: url("../fonts/SFCompactRounded/SF-Compact-Rounded-Regular.otf");
+    /*src: url("css/fonts/Harabara.woff") format("woff"), url("css/fonts/Harabara.otf") format("opentype"), url("css/fonts/Harabara.svg#filename") format("svg");*/
+}
+
+/*::-webkit-scrollbar {
+    display: none;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    /*max-width: 280px;*/
+}
+
+aside {
+    position: fixed;
+}
+
+ul {
+    list-style: none;
+}
+
+/*aside nav.navbar {
+    height: 100px;
+}*/
+
+.col-md-2 nav .nav-item {
+    font-size: 28px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .col-12 nav .nav-item {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .col-12 nav .nav-item {
+        font-size: 14px;
+    }
+}
+
+
+nav .nav-item span {
+    padding-left: 15px;
+}
+
+    /*aside .calendar-container {
+        position: absolute;
+        bottom: 0px;
+        margin-bottom: 50px;
+    }*/
+
+
+.flex-container {
+    display: flex;
+    margin-bottom: 15px;
+}

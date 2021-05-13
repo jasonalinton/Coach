@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a9193727fb644eb3a00bdcbc73392de7" Name="Diagram1">
+        <EntityTypeShape EntityType="coachModel.deadline" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.event" Width="1.5" PointX="6" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_goal" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_note" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_repeat" Width="1.5" PointX="14.25" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_routine" Width="1.5" PointX="5.25" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_tag" Width="1.5" PointX="11.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_timeframe" Width="1.5" PointX="14.25" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_todoitem" Width="1.5" PointX="13.25" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_type" Width="1.5" PointX="11.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.inventoryitem" Width="1.5" PointX="6" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.inventoryitem_goal" Width="1.5" PointX="8.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.inventoryitem_routine" Width="1.5" PointX="8.25" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.inventoryitem_todoitem" Width="1.5" PointX="16.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.inventoryitemspotlight" Width="1.5" PointX="11.25" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.medium" Width="1.5" PointX="11" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.note" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.repeat" Width="1.5" PointX="3" PointY="40.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.repeat_dayofmonth" Width="1.5" PointX="5.25" PointY="50.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.repeat_dayofweek" Width="1.5" PointX="5.25" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.repeat_month" Width="1.5" PointX="5.25" PointY="56.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.routine" Width="1.5" PointX="3" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.routine_note" Width="1.5" PointX="5.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.routine_repeat" Width="1.5" PointX="5.25" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.routine_tag" Width="1.5" PointX="8.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.routine_todoitem" Width="1.5" PointX="8.25" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.routine_type" Width="1.5" PointX="11.25" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.tag" Width="1.5" PointX="6" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.task" Width="1.5" PointX="3" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.task_event" Width="1.5" PointX="8.25" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.task_routine" Width="1.5" PointX="5.25" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.task_todoitem" Width="1.5" PointX="5.25" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.time" Width="1.5" PointX="0.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.timeframe" Width="1.5" PointX="0.75" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem" Width="1.5" PointX="11" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem_medium" Width="1.5" PointX="13.25" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem_note" Width="1.5" PointX="14.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem_repeat" Width="1.5" PointX="16.25" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem_tag" Width="1.5" PointX="17.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem_timeframe" Width="1.5" PointX="19.25" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem_todoitem" Width="1.5" PointX="13.25" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem_type" Width="1.5" PointX="19.25" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.type" Width="1.5" PointX="9" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.user" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.event_view" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.goal_view" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.inventoryitem_view" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.repeat_view" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.routine_view" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.task_view" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachModel.todoitem_view" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="coachModel.fk_Goal_Deadline1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_ToDoItem_Deadline1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Event_Task_Event1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Goal_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Goal_Goal2" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Note_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Repeat_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Routine_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Tag_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Timeframe_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_TodoItem_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Type_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_InventoryItem_Goal_Goal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Note_Note1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Repeat_Repeat1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Routine_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Tag_Tag1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Timeframe_Timeframe1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_TodoItem_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Goal_Type_Type1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_InventoryItem_Goal_InventoryItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_InventoryItem_Routine_InventoryItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_InventoryItem_TodoItem_InventoryItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_InventoryItemSpotlight_InventoryItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_InventoryItem_Routine_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_InventoryItem_TodoItem_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_InventoryItemSpotlight_Timeframe1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Medium_Medium1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Note_Note1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_ToDoItem_Note_Note1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Repeat_Date_Repeat1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Repeat_Month_Repeat1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Repeat_Timeframe1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Repeat_Weekday_Repeat1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Repeat_Repeat1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Repeat_Repeat1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Note_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Repeat_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Tag_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Task_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Time1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_TodoItem_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Type_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Tag_Tag1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_TodoItem_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Type_Type1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_ToDoItem_Tag_Tag1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Event_Task_Task1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Routine_Task_Task1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_Task_Time1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Task_Task1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Task_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_ToDoItem_Time1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Timeframe_Timeframe1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Medium_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_ToDoItem_Note_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Repeat_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_ToDoItem_Tag_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Timeframe_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_TodoItem_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_TodoItem_ToDoItem2" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Type_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachModel.fk_TodoItem_Type_Type1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="coachModel.event_type" Width="1.5" PointX="17.25" PointY="28.375" />
+        <AssociationConnector Association="coachModel.fk_Event_Type_Event1" />
+        <AssociationConnector Association="coachModel.fk_Event_Type_Type1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

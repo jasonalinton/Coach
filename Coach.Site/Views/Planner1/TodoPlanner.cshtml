@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Todo Planner";
+}
+
+<link href="~/Content/ViewStyles/Planner/TodoPlanner.css" rel="stylesheet" />
+<script src="~/Scripts/ViewScripts/Planner/TodoPlanner.js"></script>
+
+<div class="row no-gutters">
+    <div class="col-auto">
+        <div class="left-panel">
+            <div class="row no-gutters">
+                <div class="col">
+                    <div class="calendar"></div>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col">
+                    <h1 class="text-center">Goals</h1>
+                    <ul class="goal-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="center-panel">
+            <div class="row no-gutters wrapper">
+            </div>
+        </div>
+    </div>
+    @*<div class="col-auto">
+        <div class="right-panel">
+            <div class="panel">
+                <div class="unplanned">
+                    <h1 class="text-center">Todos</h1>
+                    <ul class="todo-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>*@
+    <div class="col-auto">
+        <div class="right-panel">
+            <div class="panel">
+                <h1 class="text-center">Todos</h1>
+                <ul class="todo-list hierarchy" data-parent-id="0"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="day-template" type="text/x-kendo-template">
+    <div class="col">
+        <div class="day-col" data-date="#:DateString#" data-era="#:Era#">
+            <div class="date-label d-flex flex-column align-items-end">
+                <div class="day">#:DayOfWeek.slice(0, 3)#</div>
+                <div class="date-icon text-center">#:DayOfMonth#</div>
+            </div>
+            <ul class="task-list" data-date="#:DateString#"></ul>
+        </div>
+    </div>
+</script>
+
+<script id="task-template" type="text/x-kendo-template">
+    <div class="task #:Class#" data-idtodo="#:ID#">
+        <i class="task-icon fas fa-list-ul"></i>
+        <span>#:Text#</span>
+    </div>
+</script>
+
+<script id="hierarchical-todo-template" type="text/x-kendo-template">
+    <li data-todo-id="#:ID#">
+        <div data-idtodo="#:ID#">
+            <div class="hierarchical-todo #:Class#">
+                <span>#:Text#</span>
+            </div>
+            <ul class="todo-list hierarchy" data-parent-id="#:ID#">
+
+            </ul>
+        </div>
+    </li>
+</script>
+
+<script id="context-menu-template" type="text/x-kendo-template">
+    <ul id="task-context-menu">
+        <li class="complete">Complete</li>
+        <li class="incomplete">Incomplete</li>
+        <li class="attempted">Attempted</li>
+        <li class="delete">Delete</li>
+    </ul>
+</script>

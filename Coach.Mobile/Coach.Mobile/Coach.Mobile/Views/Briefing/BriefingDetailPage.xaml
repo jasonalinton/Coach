@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Coach.Mobile.Views.Briefing.BriefingDetailPage" mc:Ignorable="d"
+             xmlns:briefingVM="clr-namespace:Coach.Mobile.ViewModels.Briefing"
+             xmlns:helper="clr-namespace:Coach.Mobile.Models.Helper"
+             xmlns:inventoryItem="clr-namespace:Coach.Mobile.Models.InventoryItem"
+             Title="Briefing">
+    <d:ContentPage.BindingContext>
+        <briefingVM:BriefingDetailPageVM>
+            <x:Arguments>
+                <x:Boolean>true</x:Boolean>
+            </x:Arguments>
+        </briefingVM:BriefingDetailPageVM>
+    </d:ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding ToolbarButtonText}"
+                     Priority="0"
+                     Clicked="OnToolbarButtonClicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout x:Name="ViewerStackLayout">
+                    <Label Text="{Binding BriefingModel.Type}"/>
+                    <Label Text="{Binding BriefingModel.InventoryItem}"/>
+                    <Label Text="{Binding BriefingModel.PostedAt, StringFormat='{0:MMMM dd, yyyy}'}"/>
+                    <Label BackgroundColor="LightBlue"
+                           Text="{Binding BriefingModel.Text}"/>
+                </StackLayout>
+                <StackLayout x:Name="EditorStackLayout"
+                             IsVisible="false">
+                    <Picker ItemsSource="{x:Static helper:TypeModel.BriefingTypeModels}"
+                            ItemDisplayBinding="{Binding Type}"
+                            SelectedItem="{Binding SelectedType}"/>
+                    <Picker ItemsSource="{x:Static inventoryItem:InventoryItemModel.InventoryItemModels}"
+                            ItemDisplayBinding="{Binding Name}"
+                            SelectedItem="{Binding SelectedInventoryItem}"/>
+                    <DatePicker Date="{Binding BriefingEditModel.PostedAt}"/>
+                    <Editor BackgroundColor="LightBlue"
+                            Placeholder="{Binding BriefingEditModel.Type}"
+                            Text="{Binding BriefingEditModel.Text}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

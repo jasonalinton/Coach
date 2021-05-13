@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2d1702a799604045bce15f13437fcd2b" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="coachogModel.deadline" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.event" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.event_type" Width="1.5" PointX="8" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.fooditem" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.fooditem_nutrient" Width="1.5" PointX="7.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_goal" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_note" Width="1.5" PointX="18.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_repeat" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_routine" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_tag" Width="1.5" PointX="4.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_timeframe" Width="1.5" PointX="6.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_todoitem" Width="1.5" PointX="17.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_type" Width="1.5" PointX="19.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.inventoryitem" Width="1.5" PointX="15.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.inventoryitem_goal" Width="1.5" PointX="18" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.inventoryitem_logitem" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.inventoryitem_routine" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.inventoryitem_todoitem" Width="1.5" PointX="20.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.inventoryitemspotlight" Width="1.5" PointX="20.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.keyvalue" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.keyvalue_type" Width="1.5" PointX="8" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.location" Width="1.5" PointX="20.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logentry" Width="1.5" PointX="11" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logentry_itemfield" Width="1.5" PointX="13.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logentry_logitemfield" Width="1.5" PointX="13.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logfield" Width="1.5" PointX="8.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logitem" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logitem_field" Width="1.5" PointX="11" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logitemfield" Width="1.5" PointX="11" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logitemfield_keyvalue" Width="1.5" PointX="16.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.meal" Width="1.5" PointX="13.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.meal_fooditem" Width="1.5" PointX="16" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.meal_meal" Width="1.5" PointX="20.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.meal_type" Width="1.5" PointX="10.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.meal_waterlog" Width="1.5" PointX="21.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.medium" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.note" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.nutrient" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.photo" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.repeat" Width="1.5" PointX="4.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.repeat_dayofmonth" Width="1.5" PointX="22.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.repeat_dayofweek" Width="1.5" PointX="22.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.repeat_month" Width="1.5" PointX="22.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.routine" Width="1.5" PointX="10.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.routine_note" Width="1.5" PointX="13" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.routine_repeat" Width="1.5" PointX="13" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.routine_tag" Width="1.5" PointX="15.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.routine_todoitem" Width="1.5" PointX="22.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.routine_type" Width="1.5" PointX="17.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.tag" Width="1.5" PointX="19.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.task" Width="1.5" PointX="15.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.task_event" Width="1.5" PointX="21.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.task_meal" Width="1.5" PointX="18" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.task_routine" Width="1.5" PointX="12.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.task_type" Width="1.5" PointX="23.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.time" Width="1.5" PointX="23.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.timeframe" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem_medium" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem_note" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem_repeat" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem_tag" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem_timeframe" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem_todoitem" Width="1.5" PointX="24.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem_type" Width="1.5" PointX="24.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.type" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.type_type" Width="1.5" PointX="24.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.user" Width="1.5" PointX="24.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.waterlog" Width="1.5" PointX="4.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.event_view" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.goal_view" Width="1.5" PointX="8.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.inventory_logitemfield_view" Width="1.5" PointX="14.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.inventoryitem_view" Width="1.5" PointX="16.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.logitemfield_view" Width="1.5" PointX="25.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.repeat_view" Width="1.5" PointX="18.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.routine_view" Width="1.5" PointX="20.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.task_mealfooditemnutrient_view" Width="1.5" PointX="25.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.task_view" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.todoitem_view" Width="1.5" PointX="26.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coachogModel.waterlog_mealtask_view" Width="1.5" PointX="10.75" PointY="26.75" IsExpanded="true" />
+        <AssociationConnector Association="coachogModel.fk_Event_Type_Type1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItem_Goal_InventoryItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_KeyValue_Type_KeyValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_LogItemField_KeyValue_KeyValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_KeyValue_Type_Type1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_LogEntry_LogItemField_LogEntry1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_LogEntry_LogItemField_LogItemField1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_LogItem_Field_LogItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_LogItemField_LogItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_LogItemField_KeyValue_LogItemField1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_LogItemField_Type1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_LogItemField_Type2" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_Meal_FoodItem_Meal1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Note_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Repeat_Routine1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_Task_Meal_Task1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Medium_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_ToDoItem_Note_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Repeat_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_ToDoItem_Tag_ToDoItem1" ManuallyRouted="false" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Timeframe_ToDoItem1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="coachogModel.task_todoitem" Width="1.5" PointX="3" PointY="1.25" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Task_ToDoItem1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Deadline1" />
+        <AssociationConnector Association="coachogModel.fk_ToDoItem_Deadline1" />
+        <AssociationConnector Association="coachogModel.fk_Event_Task_Event1" />
+        <AssociationConnector Association="coachogModel.fk_Event_Type_Event1" />
+        <AssociationConnector Association="coachogModel.fk_FoodItem_Nutrient_FoodItem1" />
+        <AssociationConnector Association="coachogModel.fk_Meal_FoodItem_FoodItem1" />
+        <AssociationConnector Association="coachogModel.fk_FoodItem_Nutrient_Nutrient1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Goal_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Goal_Goal2" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Note_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Repeat_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Routine_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Tag_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Timeframe_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_TodoItem_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Type_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItem_Goal_Goal1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Note_Note1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Repeat_Repeat1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Routine_Routine1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Tag_Tag1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Timeframe_Timeframe1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_TodoItem_ToDoItem1" />
+        <AssociationConnector Association="coachogModel.fk_Goal_Type_Type1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItem_LogItem_InventoryItem1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItem_Routine_InventoryItem1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItem_TodoItem_InventoryItem1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItemSpotlight_InventoryItem1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItem_LogItem_LogItem1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItem_Routine_Routine1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItem_TodoItem_ToDoItem1" />
+        <AssociationConnector Association="coachogModel.fk_InventoryItemSpotlight_Timeframe1" />
+        <AssociationConnector Association="coachogModel.fk_LogEntry_Location1" />
+        <AssociationConnector Association="coachogModel.fk_LogEntry_ItemField_LogEntry1" />
+        <AssociationConnector Association="coachogModel.fk_LogEntry_LogItem1" />
+        <AssociationConnector Association="coachogModel.fk_LogEntry_ItemField_LogItem_Field1" />
+        <AssociationConnector Association="coachogModel.fk_LogField_Type1" />
+        <AssociationConnector Association="coachogModel.fk_LogItem_Field_LogField1" />
+        <AssociationConnector Association="coachogModel.fk_Meal_Meal_Meal1" />
+        <AssociationConnector Association="coachogModel.fk_Meal_Meal_Meal2" />
+        <AssociationConnector Association="coachogModel.fk_Meal_Type_Meal1" />
+        <AssociationConnector Association="coachogModel.fk_Meal_WaterLog_Meal1" />
+        <AssociationConnector Association="coachogModel.fk_Task_Meal_Meal1" />
+        <AssociationConnector Association="coachogModel.fk_Meal_Type_Type1" />
+        <AssociationConnector Association="coachogModel.fk_Meal_WaterLog_WaterLog1" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Medium_Medium1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Note_Note1" />
+        <AssociationConnector Association="coachogModel.fk_ToDoItem_Note_Note1" />
+        <AssociationConnector Association="coachogModel.fk_Repeat_Date_Repeat1" />
+        <AssociationConnector Association="coachogModel.fk_Repeat_Month_Repeat1" />
+        <AssociationConnector Association="coachogModel.fk_Repeat_Timeframe1" />
+        <AssociationConnector Association="coachogModel.fk_Repeat_Weekday_Repeat1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Repeat_Repeat1" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Repeat_Repeat1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Tag_Routine1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Task_Routine1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Time1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_TodoItem_Routine1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Type_Routine1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Tag_Tag1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_TodoItem_ToDoItem1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Type_Type1" />
+        <AssociationConnector Association="coachogModel.fk_ToDoItem_Tag_Tag1" />
+        <AssociationConnector Association="coachogModel.fk_Event_Task_Task1" />
+        <AssociationConnector Association="coachogModel.fk_Routine_Task_Task1" />
+        <AssociationConnector Association="coachogModel.fk_Task_Time1" />
+        <AssociationConnector Association="coachogModel.fk_Task_Type_Task1" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Task_Task1" />
+        <AssociationConnector Association="coachogModel.fk_Task_Type_Type1" />
+        <AssociationConnector Association="coachogModel.fk_ToDoItem_Time1" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Timeframe_Timeframe1" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_TodoItem_ToDoItem1" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_TodoItem_ToDoItem2" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Type_ToDoItem1" />
+        <AssociationConnector Association="coachogModel.fk_TodoItem_Type_Type1" />
+        <AssociationConnector Association="coachogModel.fk_Type_Type_Type1" />
+        <AssociationConnector Association="coachogModel.fk_Type_Type_Type2" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

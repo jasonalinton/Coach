@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Coach.Data.Model.todo>
+
+@{
+    ViewBag.Title = "Todos";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.text)
+        </th>
+        <th>
+            Parents
+        </th>
+        <th>
+            Children
+        </th>
+        <th>
+            Goals
+        </th>
+        <th>
+            Times
+        </th>
+        <th>
+            Repeats
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.points)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.json)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isVisible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updatedAt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.text)
+        </td>
+        <td>
+            @Html.ListBox("parents", new SelectList(item.todo_parent.Select(x => x.parent), "id", "text"))
+        </td>
+        <td>
+            @Html.ListBox("children", new SelectList(item.todo_child.Select(x => x.child), "id", "text"))
+        </td>
+        <td>
+            @Html.ListBox("goals", new SelectList(item.goal_todo.Select(x => x.goal), "id", "text"))
+        </td>
+        <td>
+            @Html.ListBox("times", new SelectList(item.todo_time.Select(x => x.time), "id", "text"))
+        </td>
+        <td>
+            @Html.ListBox("repeats", new SelectList(item.todo_repeat.Select(x => x.repeat), "id", "text"))
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.points)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.json)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isVisible)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isActive)
+        </td>
+        <td>
+            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,79 @@
+h1 {
+    font-size: 20px;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 0px;
+}
+
+h4 {
+    font-size: 9px;
+    margin: 0px;
+}
+
+.sleep-event {
+    height: 100px;
+}
+
+    .sleep-event .header {
+        height: 30px;
+    }
+
+        .sleep-event .header .sleep-label {
+            cursor: pointer;
+            text-align: center;
+        }
+
+    .sleep-event .body {
+        height: 70px;
+    }
+
+.percent-required-sleep {
+    width: 60px;
+    height: 60px;
+    border: solid 1px #979797;
+    border-radius: 30px;
+    background-color: #FEFEFE;
+}
+
+h2.time.in-bed, i.in.bed-success {
+    margin-bottom: 5px;
+}
+
+h2.time.out-bed, i.out.bed-success {
+    margin-top: 5px;
+}
+
+i.bed-success {
+    font-size: 20px;
+}
+
+.session-duration.success {
+    color: #35BA07;
+}
+
+
+.session-duration.failure {
+    color: #B01E07;
+    text-decoration: line-through;
+}
+
+i.complete {
+    color: #35BA07;
+}
+
+i.incomplete {
+    color: #B01E07;
+}
+
+i.no-data {
+    color: #495057;
+}
+

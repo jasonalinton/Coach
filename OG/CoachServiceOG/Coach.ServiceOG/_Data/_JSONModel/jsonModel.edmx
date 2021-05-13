@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="jsonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Goal">
+          <Key>
+            <PropertyRef Name="idGoal" />
+          </Key>
+          <Property Name="idGoal" Type="int" Nullable="false" />
+          <Property Name="title" Type="text" />
+          <Property Name="type" Type="text" />
+          <Property Name="repetition" Type="text" />
+          <Property Name="timeframe" Type="text" />
+          <Property Name="deadline" Type="text" />
+          <Property Name="idInventoryItems" Type="text" />
+          <Property Name="idParents" Type="text" />
+          <Property Name="idChildren" Type="text" />
+          <Property Name="idRoutines" Type="text" />
+          <Property Name="idTodoItems" Type="text" />
+          <Property Name="explaination" Type="text" />
+          <Property Name="active" Type="bit" />
+        </EntityType>
+        <EntityType Name="InventoryItem">
+          <Key>
+            <PropertyRef Name="idInventoryItem" />
+          </Key>
+          <Property Name="idInventoryItem" Type="int" Nullable="false" />
+          <Property Name="title" Type="text" />
+          <Property Name="idGoals" Type="text" />
+          <Property Name="idParents" Type="text" />
+          <Property Name="idChildren" Type="text" />
+          <Property Name="idRoutines" Type="text" />
+          <Property Name="idTodoItems" Type="text" />
+        </EntityType>
+        <EntityType Name="Routine">
+          <Key>
+            <PropertyRef Name="idRoutine" />
+          </Key>
+          <Property Name="idRoutine" Type="int" Nullable="false" />
+          <Property Name="Name" Type="text" />
+          <Property Name="Type" Type="text" />
+          <Property Name="idInventoryItems" Type="text" />
+          <Property Name="idGoals" Type="text" />
+          <Property Name="idParents" Type="text" />
+          <Property Name="idChildren" Type="text" />
+          <Property Name="idTodoItems" Type="text" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="TodoItem">
+          <Key>
+            <PropertyRef Name="idTodoItem" />
+          </Key>
+          <Property Name="idTodoItem" Type="int" Nullable="false" />
+          <Property Name="Label" Type="text" />
+          <Property Name="Type" Type="text" />
+          <Property Name="Repetition" Type="text" />
+          <Property Name="Timeframe" Type="text" />
+          <Property Name="Deadline" Type="text" />
+          <Property Name="Medium" Type="text" />
+          <Property Name="idInventoryItems" Type="text" />
+          <Property Name="idParents" Type="text" />
+          <Property Name="idChildren" Type="text" />
+          <Property Name="idGoals" Type="text" />
+          <Property Name="idRoutines" Type="text" />
+          <Property Name="IsGroup" Type="bit" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="jsonModelStoreContainer">
+          <EntitySet Name="Goal" EntityType="Self.Goal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryItem" EntityType="Self.InventoryItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Routine" EntityType="Self.Routine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TodoItem" EntityType="Self.TodoItem" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="jsonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Goal">
+          <Key>
+            <PropertyRef Name="idGoal" />
+          </Key>
+          <Property Name="idGoal" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="repetition" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="timeframe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="deadline" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idInventoryItems" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idParents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idChildren" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idRoutines" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="explaination" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="idTodoItems" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="InventoryItem">
+          <Key>
+            <PropertyRef Name="idInventoryItem" />
+          </Key>
+          <Property Name="idInventoryItem" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idGoals" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idParents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idChildren" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idRoutines" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idTodoItems" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Routine">
+          <Key>
+            <PropertyRef Name="idRoutine" />
+          </Key>
+          <Property Name="idRoutine" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idGoals" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idParents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idChildren" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idTodoItems" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="idInventoryItems" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TodoItem">
+          <Key>
+            <PropertyRef Name="idTodoItem" />
+          </Key>
+          <Property Name="idTodoItem" Type="Int32" Nullable="false" />
+          <Property Name="Label" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Repetition" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Timeframe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Deadline" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Medium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idInventoryItems" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idParents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idChildren" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idGoals" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="idRoutines" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsGroup" Type="Boolean" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="jsonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Goals" EntityType="Self.Goal" />
+          <EntitySet Name="InventoryItems" EntityType="Self.InventoryItem" />
+          <EntitySet Name="Routines" EntityType="Self.Routine" />
+          <EntitySet Name="TodoItems" EntityType="Self.TodoItem" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="jsonModelStoreContainer" CdmEntityContainer="jsonEntities">
+          <EntitySetMapping Name="Goals">
+            <EntityTypeMapping TypeName="jsonModel.Goal">
+              <MappingFragment StoreEntitySet="Goal">
+                <ScalarProperty Name="idTodoItems" ColumnName="idTodoItems" />
+                <ScalarProperty Name="idGoal" ColumnName="idGoal" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="repetition" ColumnName="repetition" />
+                <ScalarProperty Name="timeframe" ColumnName="timeframe" />
+                <ScalarProperty Name="deadline" ColumnName="deadline" />
+                <ScalarProperty Name="idInventoryItems" ColumnName="idInventoryItems" />
+                <ScalarProperty Name="idParents" ColumnName="idParents" />
+                <ScalarProperty Name="idChildren" ColumnName="idChildren" />
+                <ScalarProperty Name="idRoutines" ColumnName="idRoutines" />
+                <ScalarProperty Name="explaination" ColumnName="explaination" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventoryItems">
+            <EntityTypeMapping TypeName="jsonModel.InventoryItem">
+              <MappingFragment StoreEntitySet="InventoryItem">
+                <ScalarProperty Name="idInventoryItem" ColumnName="idInventoryItem" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="idGoals" ColumnName="idGoals" />
+                <ScalarProperty Name="idParents" ColumnName="idParents" />
+                <ScalarProperty Name="idChildren" ColumnName="idChildren" />
+                <ScalarProperty Name="idRoutines" ColumnName="idRoutines" />
+                <ScalarProperty Name="idTodoItems" ColumnName="idTodoItems" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Routines">
+            <EntityTypeMapping TypeName="jsonModel.Routine">
+              <MappingFragment StoreEntitySet="Routine">
+                <ScalarProperty Name="idInventoryItems" ColumnName="idInventoryItems" />
+                <ScalarProperty Name="idRoutine" ColumnName="idRoutine" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="idGoals" ColumnName="idGoals" />
+                <ScalarProperty Name="idParents" ColumnName="idParents" />
+                <ScalarProperty Name="idChildren" ColumnName="idChildren" />
+                <ScalarProperty Name="idTodoItems" ColumnName="idTodoItems" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TodoItems">
+            <EntityTypeMapping TypeName="jsonModel.TodoItem">
+              <MappingFragment StoreEntitySet="TodoItem">
+                <ScalarProperty Name="idTodoItem" ColumnName="idTodoItem" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Repetition" ColumnName="Repetition" />
+                <ScalarProperty Name="Timeframe" ColumnName="Timeframe" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="Medium" ColumnName="Medium" />
+                <ScalarProperty Name="idInventoryItems" ColumnName="idInventoryItems" />
+                <ScalarProperty Name="idParents" ColumnName="idParents" />
+                <ScalarProperty Name="idChildren" ColumnName="idChildren" />
+                <ScalarProperty Name="idGoals" ColumnName="idGoals" />
+                <ScalarProperty Name="idRoutines" ColumnName="idRoutines" />
+                <ScalarProperty Name="IsGroup" ColumnName="IsGroup" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

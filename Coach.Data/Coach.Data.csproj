@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB67AAE0-2354-4B24-87A5-85798403CA31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Coach.Data</RootNamespace>
+    <AssemblyName>Coach.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.43.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.43.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.43.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.43.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.43.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Tasks.v1, Version=1.43.0.1804, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Tasks.v1.1.43.0.1804\lib\net45\Google.Apis.Tasks.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.20\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.20\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.20\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.20\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomAttribute.cs" />
+    <Compile Include="DataAccess\Briefing\BriefingDAO.cs" />
+    <Compile Include="DataAccess\Inventory\InventoryDAO.cs" />
+    <Compile Include="DataAccess\Inventory\Physical\SleepDAO.cs" />
+    <Compile Include="DataAccess\Items\GoalDAO.cs" />
+    <Compile Include="DataAccess\Items\RoutineDAO.cs" />
+    <Compile Include="DataAccess\Items\TodoDAO.cs" />
+    <Compile Include="DataAccess\Items\Todo\LocalServerCodeReceiver2.cs" />
+    <Compile Include="DataAccess\Logging\LogDAO.cs" />
+    <Compile Include="EFExtention\Context\coachdevvEntities.cs" />
+    <Compile Include="EFExtention\Model\eventtask.cs" />
+    <Compile Include="EFExtention\Model\goal.cs" />
+    <Compile Include="EFExtention\Model\goal_routine.cs" />
+    <Compile Include="EFExtention\Model\goal_time.cs" />
+    <Compile Include="EFExtention\Model\goal_todo.cs" />
+    <Compile Include="EFExtention\Model\Interface\Icoachdevmodel.cs" />
+    <Compile Include="EFExtention\Model\Interface\IMainTable.cs" />
+    <Compile Include="EFExtention\Model\Interface\IMappingTable.cs" />
+    <Compile Include="EFExtention\Model\inventoryitem_logitem.cs" />
+    <Compile Include="EFExtention\Model\inventoryitem_routine.cs" />
+    <Compile Include="EFExtention\Model\inventoryitem_todo.cs" />
+    <Compile Include="EFExtention\Model\logentry.cs" />
+    <Compile Include="EFExtention\Model\logentry_itemfield.cs" />
+    <Compile Include="EFExtention\Model\logfield.cs" />
+    <Compile Include="EFExtention\Model\logitem.cs" />
+    <Compile Include="EFExtention\Model\logitem_field.cs" />
+    <Compile Include="EFExtention\Model\repeat.cs" />
+    <Compile Include="EFExtention\Model\repeat_time.cs" />
+    <Compile Include="EFExtention\Model\routine.cs" />
+    <Compile Include="EFExtention\Model\routine_eventtask.cs" />
+    <Compile Include="EFExtention\Model\routine_repeat.cs" />
+    <Compile Include="EFExtention\Model\routine_todo.cs" />
+    <Compile Include="EFExtention\Model\sleeprequirement.cs" />
+    <Compile Include="EFExtention\Model\sleepsession.cs" />
+    <Compile Include="EFExtention\Model\time.cs" />
+    <Compile Include="EFExtention\Model\todo.cs" />
+    <Compile Include="EFExtention\Model\inventoryitem.cs" />
+    <Compile Include="EFExtention\Model\inventoryitem_goal.cs" />
+    <Compile Include="EFExtention\Model\todo_eventtask.cs" />
+    <Compile Include="EFExtention\Model\todo_repeat.cs" />
+    <Compile Include="EFExtention\Model\todo_time.cs" />
+    <Compile Include="Extension\ExtentionMethods.cs" />
+    <Compile Include="Mapping\MyMapper.cs" />
+    <Compile Include="DataAccess\Items\Todo\GoogleTaskDAO.cs" />
+    <Compile Include="Model\apptransaction.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\apptransaction_errorlog.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\apptransaction_eventlog.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\briefing.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\briefing_type.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoachDevModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoachDevModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoachDevModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoachDevModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoachDevModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\errorlog.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\eventlog.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\eventtask.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_goal.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_location.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_note.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_photo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_routine.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_tag.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_time.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_todo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_type.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\goal_view.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\inventoryitem.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\inventoryitem_briefing.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\inventoryitem_goal.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\inventoryitem_logitem.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\inventoryitem_routine.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\inventoryitem_todo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\keyvalue.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\location.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\logentry.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\logentry_itemfield.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\logfield.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\logitem.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\logitemfield_keyvalue.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\logitemfield_view.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\logitem_field.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\note.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\CoachOGModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoachOGModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\CoachOGModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\CoachOGModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoachOGModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\deadline.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\event.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\event_type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\event_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\fooditem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\fooditem_nutrient.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_goal.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_note.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_repeat.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_routine.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_tag.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_timeframe.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_todoitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\goal_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\inventoryitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\inventoryitemspotlight.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\inventoryitem_goal.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\inventoryitem_logitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\inventoryitem_routine.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\inventoryitem_todoitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\inventoryitem_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\inventory_logitemfield_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\keyvalue.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\keyvalue_type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\location.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logentry.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logentry_itemfield.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logentry_logitemfield.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logfield.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logitemfield.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logitemfield_keyvalue.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logitemfield_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\logitem_field.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\meal.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\meal_fooditem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\meal_meal.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\meal_type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\meal_waterlog.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\medium.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\note.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\nutrient.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\photo.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\repeat.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\repeat_dayofmonth.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\repeat_dayofweek.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\repeat_month.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\repeat_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\routine.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\routine_note.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\routine_repeat.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\routine_tag.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\routine_todoitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\routine_type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\routine_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\tag.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\task.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\task_event.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\task_meal.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\task_mealfooditemnutrient_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\task_routine.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\task_todoitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\task_type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\task_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\time.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\timeframe.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem_medium.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem_note.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem_repeat.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem_tag.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem_timeframe.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem_todoitem.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem_type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\todoitem_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\type_type.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\user.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\waterlog.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OG\waterlog_mealtask_view.cs">
+      <DependentUpon>CoachOGModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\photo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\repeat.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\repeat_time.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_eventtask.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_location.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_note.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_photo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_repeat.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_routine.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_tag.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_todo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_type.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\routine_view.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sleeprequirement.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sleepsession.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tag.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\time.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_eventtask.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_location.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_note.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_photo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_repeat.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_tag.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_time.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_todo.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_type.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\todo_view.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\type.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\type_type.cs">
+      <DependentUpon>CoachDevModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Model\OG\CoachOGModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CoachOGModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Model\CoachDevModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CoachDevModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\CoachDevModel.edmx.diagram">
+      <DependentUpon>CoachDevModel.edmx</DependentUpon>
+    </None>
+    <None Include="Model\OG\CoachOGModel.edmx.diagram">
+      <DependentUpon>CoachOGModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Coach.Model\Coach.Model.csproj">
+      <Project>{a7c7de60-6a69-4d59-aa1e-2c63992cd4d5}</Project>
+      <Name>Coach.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\CoachDevModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoachDevModel.edmx</DependentUpon>
+      <LastGenOutput>CoachDevModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\CoachDevModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoachDevModel.edmx</DependentUpon>
+      <LastGenOutput>CoachDevModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\OG\CoachOGModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoachOGModel.edmx</DependentUpon>
+      <LastGenOutput>CoachOGModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\OG\CoachOGModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoachOGModel.edmx</DependentUpon>
+      <LastGenOutput>CoachOGModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

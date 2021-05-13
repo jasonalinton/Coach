@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Timeline";
+}
+
+<link href="~/Content/ViewStyles/Timeline/timeline.css" rel="stylesheet" />
+<script src="~/Scripts/ViewScripts/Timeline/timeline.js"></script>
+
+<div class="row no-gutters">
+    <div class="col">
+        <div class="timeline-week-container">
+        </div>
+    </div>
+</div>
+
+<script id="timeline-week-template" type="text/x-kendo-template">
+    <div class="week d-flex justify-content-between" data-index="#:Index#">
+        # $(Days).each(function (index, day) { #
+        <div class="day #:day.Era# #:day.SelectionClass#" data-date="#:day.DateString#">
+            <div class="date view">
+                <div class="day-of-week">#:day.DayOfWeek.slice(0, 3)#</div>
+                <div class="date">#:day.Month.slice(0, 3)# #:day.DayOfMonth#</div>
+            </div>
+            <div class="percent view d-none">
+                <div class="percent-complete">#:day.PercentComplete#%</div>
+            </div>
+        </div>
+        # }); #
+    </div>
+</script>

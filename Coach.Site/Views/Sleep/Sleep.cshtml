@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Sleep";
+}
+
+<link href="~/Content/ViewStyles/Sleep/sleep.css" rel="stylesheet" />
+<script src="~/Scripts/ViewScripts/Sleep/sleep.js"></script>
+
+<div id="sleep-event-container"></div>
+<script id="sleep-event-template" type="text/x-kendo-template">
+    <div class="row no-gutters">
+        <div class="col">
+            <div class="sleep-event">
+                <div class="row no-gutters header">
+                    <div class="col-4 align-middle">
+                        <h1 class="sleep-label" onclick="onSleepLabelClick()">Sleep</h1>
+                    </div>
+                    <div class="col-4 offset-4 d-flex justify-content-center align-items-center">
+                        <h3 class="session-duration #:SessionDurationSuccessClass# m-auto">#:SessionDuration#</h3>
+                    </div>
+                </div>
+                <div class="row no-gutters body">
+                    <div class="col-4">
+                        <div class="percent-required-sleep m-auto d-flex justify-content-center align-items-center">
+                            <h3 class="percent">#:PercentReuiredSleep#%</h3>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row no-gutters h-50">
+                            <div class="col-6 d-flex justify-content-center align-items-end">
+                                <h2 class="time in-bed align-bottom">#:TimeInBed#</h2>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-end">
+                                <i class="in bed-success #:InBedSuccessClass#"></i>
+                            </div>
+                        </div>
+                        <div class="row no-gutters h-50">
+                            <div class="col-6 d-flex justify-content-center align-items-start">
+                                <h2 class="time out-bed align-top">#:TimeAwake#</h2>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-start">
+                                <i class="out bed-success #:OutBedSuccessClass#"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<div class="d-none">
+    <input id="sleep-upload" name="csvFiles" type="file" />
+</div>
+
+

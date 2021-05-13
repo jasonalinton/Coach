@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewBag.Title = "Planner";
+}
+
+<script src="~/Areas/OG/Scripts/ViewScripts/Planner/planner.js"></script>
+
+
+<div class="container-fluid">
+    <div class="row no-gutters">
+        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-5">
+            <div id="planner"></div>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-8 col-lg-7">
+            @Html.Partial("/Areas/OG/Views/Physical/_MealEvent.cshtml")
+        </div>
+        @*<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xs-push-12">
+                <div id="event-info-container" style="padding-left:20px;"></div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xs-pull-12">
+                <div id="task-checklist-container"></div>
+            </div>*@
+    </div>
+</div>
+
+<div class="d-none d-md-block">
+    <input id="allow-event-edit" type="checkbox"><label for="allow-event-edit">Events to be edited</label>
+    <input id="show-delete-task-alart" type="checkbox" checked><label for="show-delete-task-alart">Show delete task alert</label>
+    <button class="btn btn-primary" type="button" onclick="refreshTasks()">Refresh Tasks</button>
+</div>
+
+
+<script id="event-template" type="text/x-kendo-template">
+    <div class="event-div" data-eventid="#:idEvent#" data-type="#:Type#" onclick="eventDiv_Clicked(this)">
+        <div style="text-align:center; vertical-align:middle; line-height:12px;">#: title #</div>
+    </div>
+</script>
+
+<script id="task-li-template" type="text/x-kendo-template">
+    <li class="task">
+        #:Title#
+        <i class="delete-task-button fas fa-times" onclick="deleteTaskButton_Click(this)"></i>
+        <label class="switch-container">
+            <input class="task" type="checkbox" #if(IsComplete){# checked #}# data-taskid="#:idTask#" style="visibility: hidden;" />
+            <span class="slider round"></span>
+        </label>
+    </li>
+</script>
+
+<script id="meal-event-template" type="text/x-kendo-template">
+    <div class="meal-event">
+        <div class="center">
+            <h2 style="text-align: center;">#:event.title#</h2>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <th>Item</th>
+                        <th>Calaries</th>
+                        <th>Carbs</th>
+                        <th>Protein</th>
+                        <th>Fat</th>
+                    </tr>
+                    #if (meal) {
+                    $(meal.MealItems).each(function (index, item) {#
+                    <tr>
+                        <td>#:item.ItemName#</td>
+                        <td>#:item.Calaries#</td>
+                        <td>#:item.Carbohydrates#</td>
+                        <td>#:item.Protein#</td>
+                        <td>#:item.Fat#</td>
+                    </tr>
+                    #});#
+                    <tr style="margin-top:10px;">
+                        <td style="font-weight:bold;">Total</td>
+                        <td style="font-weight:bold;">#:meal.Calaries#</td>
+                        <td style="font-weight:bold;">#:meal.Carbohydrates#</td>
+                        <td style="font-weight:bold;">#:meal.Protein#</td>
+                        <td style="font-weight:bold;">#:meal.Fat#</td>
+                    </tr>
+                    #} else {#
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold;">Total</td>
+                        <td style="font-weight:bold;">0</td>
+                        <td style="font-weight:bold;">0</td>
+                        <td style="font-weight:bold;">0</td>
+                        <td style="font-weight:bold;">0</td>
+                    </tr>
+                    #}#
+
+                </tbody>
+            </table>
+        </div>
+        <div class="center">
+            <h3 style="text-align: center;">Macronutrients</h3>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>Total</th>
+                        <th>Goal</th>
+                    </tr>
+                    #if (meal) {#
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td>#:meal.Macros.Carbs#%</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>#:meal.Macros.Protein#%</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td>Fat</td>
+                        <td>#:meal.Macros.Fat#%</td>
+                        <td>30%</td>
+                    </tr>
+                    #}  else {#
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td>0%</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>0%</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td>Fat</td>
+                        <td>0%</td>
+                        <td>30%</td>
+                    </tr>
+                    #}#
+                </tbody>
+            </table>
+
+            <div id="meal-chart-#:event.idEvent#"></div>
+        </div>
+        <input id="add-food-log" name="foodLogs" type="file" />
+    </div>
+</script>
+
+
+
+
+
+
+<style type="text/css">
+
+
+
+    #planner {
+        height: calc(100vh - 40px);
+    }
+
+    /*increase or decrease the height*/
+    /*.k-scheduler-table td, .k-scheduler-table th {
+        height: 1em;
+        padding: .334em .5em;
+        font-size: 100%;
+    }*/
+
+    /*  .k-scheduler-table td, .k-scheduler-table th {
+        height: 50px;
+        font-size: 100%;
+    }*/
+
+    .item-container {
+        font-size: 10px !important;
+    }
+
+        .item-container h2 {
+            background-color: yellow;
+        }
+
+    .item-list-item {
+        background-color: lightcoral;
+        z-index: 10;
+        cursor: default;
+    }
+
+    td.ui-droppable {
+        background-color: lightblue;
+    }
+
+    .delete-task-button {
+        float: right;
+        font-size: 20px;
+        height: 40px;
+        margin-left: 10px;
+        color: red;
+        visibility: hidden;
+    }
+
+    .k-event {
+        border: none;
+        border-radius: 2px;
+    }
+
+    .k-event-inverse h5 {
+        /*color: white;*/
+    }
+
+    .event-div[data-type='Routine_Complete'] {
+        background-color: #60FF3C;
+    }
+
+        .event-div[data-type='Routine_Complete'] h5 {
+            color: white;
+        }
+
+    .event-div[data-type='Task_Complete'] {
+        background-color: #14B242;
+    }
+
+        .event-div[data-type='Task_Complete'] h5 {
+            color: white;
+        }
+
+    .event-div {
+        height: 100%;
+        padding: 5px;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        box-sizing: border-box; /* Opera/IE 8+ */
+    }
+
+        .event-div h5 {
+            margin: 0px;
+            text-align: center;
+        }
+
+    /*.delete-task-button:hover {
+        font-size: 25px;
+    }*/
+
+    li.task:hover .delete-task-button {
+        visibility: visible;
+    }
+
+    /* Widen the title field in the Kendo event modal */
+    [data-container-for="ownerId"]:first-child {
+        width: 280px
+    }
+
+
+
+    /* Extra small devices (portrait phones, less than 576px) */
+    @@media (max-width: 575.98px) {
+    }
+
+    /* Small devices (landscape phones, less than 768px) */
+    @@media (max-width: 767.98px) {
+        #planner {
+            height: 50vh;
+        }
+    }
+
+    /* Medium devices (tablets, less than 992px) */
+    @@media (max-width: 991.98px) {
+    }
+
+    /* Large devices (desktops, less than 1200px) */
+    @@media (max-width: 1199.98px) {
+    }
+</style>

@@ -1,0 +1,23 @@
+﻿body {
+}
+
+.meal-event {
+    padding: 20px 20px;
+}
+
+    .meal-event .meal-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .meal-event .result-grid-header input {
+        margin: 0px 5px;
+    }
+
+    .meal-event .result-grid-header label {
+        margin: 0px;
+    }
+
+    .meal-event .searchbar {
+        margin-bottom: 5px;
+    }

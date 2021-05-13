@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Planner";
+}
+
+<link href="~/Content/ViewStyles/Planner/Planner.css" rel="stylesheet"/>
+<script src="~/Scripts/ViewScripts/Planner/Planner.js" ></script>
+
+<div class="event-day-container">
+    <div class="day-of-week event-section">
+        <div class="day">
+            <h5>Sun</h5>
+            <h6>Mar 29</h6>
+        </div>
+        <div class="day">
+            <h5>Mon</h5>
+            <h6>Mar 30</h6>
+        </div>
+        <div class="day">
+            <h5>Tue</h5>
+            <h6>Apr 1</h6>
+        </div>
+        <div class="day">
+            <h5>Wed</h5>
+            <h6>Apr 2</h6>
+        </div>
+        <div class="day">
+            <h5>Thu</h5>
+            <h6>Apr 3</h6>
+        </div>
+        <div class="day">
+            <h5>Fri</h5>
+            <h6>Apr 4</h6>
+        </div>
+        <div class="day">
+            <h5>Sat</h5>
+            <h6>Apr 5</h6>
+        </div>
+    </div>
+    <div class="sleep-session event-section">
+        <h2 class="event-heading">Sleep 5h 44m</h2>
+        <div class="main-section">
+            <div class="status-rings">
+                <div class="middle">
+                    <div class="core">
+
+                    </div>
+                </div>
+            </div>
+            <div class="sleep-time">
+                <span class="asleep">12:00 AM</span>
+                <span class="awake">6:30 AM</span>
+            </div>
+            <div class="icons">
+                <img class="sleep" src="~/Content/ViewImages/Planner/Sleep.png" width="65" height="35" />
+                <img class="awake" src="~/Content/ViewImages/Planner/Awake.png" width="65" height="35" />
+            </div>
+            <div class="completion">
+                <i class="fas fa-times incomplete"></i>
+                @*<i class="fad fa-times incomplete"></i>*@
+                <i class="fas fa-check complete"></i>
+                @*<i class="fad fa-check complete"></i>*@
+            </div>
+        </div>
+    </div>
+    <div class="morning-routine event-section">
+        <h2 class="event-heading">Morning Routine</h2>
+        <div class="completion-container">
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon complete"></div>
+            <div class="icon complete"></div>
+            <div class="icon"></div>
+            <div class="icon complete"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon complete"></div>
+            <div class="icon complete"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon complete"></div>
+            <div class="icon complete"></div>
+            <div class="icon complete"></div>
+            <div class="icon complete"></div>
+            <div class="icon complete"></div>
+            <div class="icon"></div>
+            <div class="icon complete"></div>
+            <div class="icon"></div>
+            <div class="icon complete"></div>
+            <div class="icon"></div>
+            <div class="icon complete"></div>
+            <div class="icon complete"></div>
+        </div>
+    </div>
+    <div class="briefing event-section">
+        <h2 class="event-heading">Briefing</h2>
+        <div class="completion-container">
+            <div class="icon">
+                <span>P</span>
+            </div>
+            <div class="icon complete">
+                <span>S</span>
+            </div>
+            <div class="icon">
+                <span>M</span>
+            </div>
+            <div class="icon complete">
+                <span>E</span>
+            </div>
+            <div class="icon complete">
+                <span>F</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,215 @@
+﻿body {
+    background-color: #F5F5F5;
+}
+
+.nutrition-info, .meal-event {
+    height: 100px;
+    color: #565656;
+    text-align: center;
+}
+
+    .nutrition-info h1, .meal-event h1 {
+        font-size: 20px;
+        text-align: start;
+        margin-left: 10px;
+    }
+
+    .nutrition-info .panel {
+        width: 125px;
+    }
+
+        .nutrition-info .panel.calorie .values {
+            float: left;
+        }
+        .nutrition-info .panel.water .values {
+            float: right;
+        }
+
+        .nutrition-info .panel .values {
+            width: 70px;
+        }
+
+        .nutrition-info .panel .image-container {
+            width: 55px;
+        }
+
+        .nutrition-info .panel.calorie .image-container {
+            width: 55px;
+            float: right;
+        }
+
+        .nutrition-info .panel .amount {
+            font-size: 14px;
+        }
+
+        .nutrition-info .panel .label {
+            font-size: 8px;
+            font-weight: 500;
+            color: #BCBCBC;
+        }
+
+        .nutrition-info .panel img {
+            width: 40px;
+            height: 55px;
+            margin-top: 6px;
+        }
+
+            .nutrition-info .panel img.calorie-flame {
+                float: left;
+            }
+
+            .nutrition-info .panel img.water-droplet {
+                float: right;
+            }
+
+    .nutrition-info .remaining.panel {
+        padding-top: 13px;
+        padding-left: 1px;
+        padding-right: 5px;
+    }
+
+    .nutrition-info .remaining .calorie {
+        width: 44px;
+        float: left;
+    }
+
+        .nutrition-info .remaining .remaining.label {
+            font-size: 8px;
+            line-height: 10px;
+        }
+
+    .nutrition-info .remaining .amount {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    .nutrition-info .remaining .label {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14px;
+    }
+
+    .nutrition-info .remaining .calorie .amount, .nutrition-info .remaining .calorie .calorie.label {
+        color: #EA8919;
+    }
+
+    .nutrition-info .remaining .water {
+        width: 37px;
+        float: right;
+    }
+
+        .nutrition-info .remaining .water .amount, .nutrition-info .remaining .water .water.label {
+            color: #3B99FC;
+        }
+
+.meal-event-container {
+    background-color: #F5F5F5;
+    padding: 5px 10px;
+}
+
+.meal-event-shadow {
+    box-shadow: rgba(0,0,0,.1) -1px -1px;
+    border-radius: 4px;
+}
+
+.meal-event {
+    background-color: #FFFFFF;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    box-shadow: rgba(0,0,0,.1) 1px 1px;
+}
+
+    .meal-event .panel img {
+        width: 35px;
+        height: 48px;
+        opacity: .65;
+    }
+
+    .meal-event .panel.calorie .percent.consumed, .meal-event .panel.water .percent.consumed {
+        text-align: center;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .meal-event .panel.calorie {
+        width: 102px;
+    }
+
+        .meal-event .panel.calorie .percent.consumed, .meal-event .panel.calorie .consumed.recommended div.consumed {
+            color: #EA8919;
+        }
+
+    .meal-event .panel .consumed.recommended div {
+        display: inline-block;
+        float: left;
+    }
+
+    .meal-event .panel.calorie .consumed.recommended {
+        min-width: 56px;
+    }
+
+    .meal-event .panel.water .consumed.recommended div {
+        float: right;
+    }
+
+        .meal-event .panel .consumed.recommended div.consumed {
+            font-size: 12px;
+            line-height: 8px;
+            vertical-align: top;
+        }
+
+        .meal-event .panel .consumed.recommended div.recommended {
+            font-size: 8px;
+            line-height: 10px;
+        }
+
+    .meal-event .macros {
+        width: 138px;
+    }
+
+        .meal-event .macros .header {
+            font-size: 10px;
+            width: 88px;
+        }
+
+        .meal-event .macros .percent {
+            width: 120px;
+            height: 18px;
+            font-size: 10px;
+            line-height: 18px;
+            color: white;
+            vertical-align: middle;
+        }
+
+        .meal-event .macros .percent.recommended {
+            margin-bottom: 4px;
+            opacity: .3;
+        }
+
+            .meal-event .macros .percent .carbs {
+                background-color: #3B99FC;
+            }
+
+            .meal-event .macros .percent .prot {
+                background-color: #FC3B3B;
+            }
+
+            .meal-event .macros .percent .fat {
+                background-color: #3BFC62;
+            }
+
+    .meal-event .panel.water {
+        width: 115px;
+        padding-left: 10px;
+    }
+
+        .meal-event .panel.water img.water-droplet {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            width: 30px;
+        }
+
+        .meal-event .panel.water .percent.consumed, .meal-event .panel.water .consumed.recommended div.consumed {
+            color: #3B99FC;
+        }

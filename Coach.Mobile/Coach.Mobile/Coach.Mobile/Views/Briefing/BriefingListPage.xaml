@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:briefingVM="clr-namespace:Coach.Mobile.ViewModels.Briefing"
+             x:Class="Coach.Mobile.Views.Briefing.BriefingListPage"
+             mc:Ignorable="d"
+             Title="Briefings">
+    <d:ContentPage.BindingContext>
+        <briefingVM:BriefingVM>
+            <x:Arguments>
+                <x:Boolean>true</x:Boolean>
+            </x:Arguments>
+        </briefingVM:BriefingVM>
+    </d:ContentPage.BindingContext>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="OnNewBriefingClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <ListView x:Name="BriefingListView"
+                        ItemsSource="{Binding BriefingGroups}"
+                        GroupDisplayBinding="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}"
+                        IsGroupingEnabled="true"
+                        ItemSelected="OnBriefingSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Text}">
+                            <TextCell.ContextActions>
+                                <MenuItem Clicked="OnDelete"
+                                            Text="Delete"
+                                            IsDestructive="True"/>
+                        </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,251 @@
+﻿
+@{
+    ViewBag.Title = "Inventory Log";
+
+    @*<script src="/Scripts/KendoUI/kendo.mobile.min.js" type="text/javascript"></script>*@
+    <script src="/Areas/OG/Scripts/ViewScripts/Inventory/Log/inventory-log.js"></script>
+    @*<link href="/Content/KendoUI/kendo.mobile.all.min.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="/Areas/OG/Content/Styles/Inventory/Physical/physical.css" />
+}
+
+<script src="~/Areas/OG/Scripts/Misc/framework.js"></script>
+<script src="~/Areas/OG/Scripts/Misc/notify.js"></script>
+<script src="~/Areas/OG/Scripts/Misc/alert.js"></script>
+
+<div class="log event">
+    <div class="header" data-toggle="collapse" data-target=".log.event .body">
+        <h1 class="text-center">Log</h1>
+    </div>
+    <div class="body collapse show">
+        <ul class="item-list"></ul>
+    </div>
+</div>
+
+<script id="logitem-view-template" type="text/x-kendo-template">
+    <li>
+        <div id="#: InventoryItemName.toLowerCase() + "-" + Name.toLowerCase() #-view" class="log-item" data-logitemid="#: idLogItem #"
+             data-title="#: InventoryItemName #: #: Name #">
+            <div>
+                <span>#: Name #</span>
+                #if (Fields.length > 1) { #
+                <button class="btn" type="button" onclick="saveLog(#:idLogItem#)">Save</button>
+                #}#
+                <span class='value' data-logitemid='#: idLogItem #'></span>
+            </div>
+            <div class="field-container #: Name #">
+                #$(Fields).each(function (index, field) {
+                if (field.Type == "Slider") { #
+                <input class='field slider' value='5' title='#: field.Type #'
+                       data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+                       data-role="slider"
+                       data-increase-button-title="Right"
+                       data-decrease-button-title="Left"
+                       data-min="0"
+                       data-max="10"
+                       data-small-step="0.1"
+                       data-change="sliderOnChange"
+                       data-slide="sliderOnSlide" />
+                <div class="log-chart" data-logitemid='#: idLogItem #'></div>
+                #} else if (field.Type == "Dropdown") {
+                dropdownSource[field.Name] = field.UniqueValues; #
+                <input class='field dropdown' title='#: field.Type #' placeholder="#: field.Name #" \
+                       data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+                       data-role="combobox"
+                       data-source="dropdownSource['#:field.Name#']"
+                       data-suggest="true"
+                       data-change="dropdownAmoutOnChange" />
+                #} else if (field.Type == "Counter") { #
+                <input class='field numeric' title='#: field.Type #' type="number"
+                       style="max-width:110px;"
+                       data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+                       data-role="numerictextbox"
+                       data-min="0"
+                       data-change="amoutOnChange" />
+                #}
+                }); #
+            </div>
+        </div>
+    </li>
+</script>
+
+@*<script id="logitem-view-template" type="text/x-kendo-template">
+    <div id="#: InventoryItemName.toLowerCase() + " -" + Name.toLowerCase() #-view" class="log-item" data-logitemid="#: idLogItem #"
+         data-role="view" data-title="#: InventoryItemName #: #: Name #" data-transition="slide" data-stretch="true">
+        <div data-role="touch" data-enable-swipe="1" data-swipe="logItemOnSwipe">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <a data-role="button" data-icon="back" data-align="left" data-transition="reverse:slide" onclick="refreshLogViews()">Log Items</a>
+                    <span data-role="view-title">#: Name #</span>
+                </div>
+            </div>
+            <div class="field-container">
+                #$(Fields).each(function (index, field) {
+                if (field.Type == "Slider") { #
+                <span class='value' data-logitemid='#: idLogItem #'></span>
+                <input class='field slider' value='5' title='#: field.Type #'
+                       data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+                       data-role="slider"
+                       data-increase-button-title="Right"
+                       data-decrease-button-title="Left"
+                       data-min="0"
+                       data-max="10"
+                       data-small-step="0.1"
+                       data-change="sliderOnChange"
+                       data-slide="sliderOnSlide" />
+                <div class="log-chart" data-logitemid='#: idLogItem #'></div>
+                #}
+                }); #
+            </div>
+        </div>
+    </div>
+</script>*@
+
+
+
+<script type="text/x-kendo-template" id="header-template">
+    <h3>#: value #</h3>
+</script>
+
+@*<script type="text/x-kendo-template" id="listview-template">
+        <a href="###: InventoryItemName.toLowerCase() + "-" + Name.toLowerCase() #-view" data-transition="slide"><h4>#: Name #</h4></a>
+    </script>*@
+
+@*<script type="text/x-kendo-template" id="listview-template">
+        <span>#: Name #</span> <span class='value' data-logitemid='#: idLogItem #'></span>
+
+        <div class="field-container">
+            #$(Fields).each(function (index, field) {
+                if (field.Type == "Slider") { #
+                    <input class='field slider' value='5' title='#: field.Type #'
+                           data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+                           data-role="slider"
+                           data-increase-button-title="Right"
+                           data-decrease-button-title="Left"
+                           data-min="0"
+                           data-max="10"
+                           data-small-step="0.1"
+                           data-change="sliderOnChange"
+                           data-slide="sliderOnSlide" />
+                #} else if (field.Type == "Dropdown") { #
+                    <select data-role="dropdownlist">
+                        <option>Weed</option>
+                        <option>Vyvanse</option>
+                    </select>
+                    <select data-role="combobox">
+                        <option>Weed</option>
+                        <option>Vyvanse</option>
+                    </select>
+                    <input class='field dropdown' title='#: field.Type #'
+                           data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+                           data-role="combobox"
+                           data-source="drugs"
+                           data-change="sliderOnChange" />
+                #} else if (field.Type == "Counter") { #
+                    <input class='field numeric' title='#: field.Type #' type="number"
+                           data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+                           data-role="numerictextbox"
+                           data-min="0"
+                           data-change="amoutOnChange" />
+                #}
+            }); #
+        </div>
+    </script>*@
+
+<script id="listview-template" type="text/x-kendo-template">
+    <span>#: Name #</span>
+    #if (Fields.length > 1) { #
+    <button class="btn" type="button" onclick="saveLog(#:idLogItem#)">Save</button>
+    #}#
+    <span class='value' data-logitemid='#: idLogItem #'></span>
+
+    <div class="field-container">
+        @*<ul style="list-style:none; padding:0px">*@
+        #$(Fields).each(function (index, field) {#
+        @*<li>*@
+        #if (field.Type == "Slider") { #
+        <input class='field slider' value='5' title='#: field.Type #'
+               data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+               data-role="slider"
+               data-increase-button-title="Right"
+               data-decrease-button-title="Left"
+               data-min="0"
+               data-max="10"
+               data-small-step="0.1"
+               data-change="sliderOnChange"
+               data-slide="sliderOnSlide" />
+        #} else if (field.Type == "Dropdown") {
+        dropdownSource[field.Name] = field.UniqueValues; #
+        <input class='field dropdown' title='#: field.Type #' placeholder="#: field.Name #" \
+               data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+               data-role="combobox"
+               data-source="dropdownSource['#:field.Name#']"
+               data-suggest="true"
+               data-change="dropdownAmoutOnChange" />
+        #} else if (field.Type == "Counter") { #
+        <input class='field numeric' title='#: field.Type #' type="number"
+               style="max-width:110px;"
+               data-logitemid='#: idLogItem #' data-logitemfieldid='#: field.idLogItemField #'
+               data-role="numerictextbox"
+               data-min="0"
+               data-change="amoutOnChange" />
+        #}#
+        @*</li>*@
+        #}); #
+        @*</ul>*@
+    </div>
+</script>
+
+<style>
+    .log.event {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .log.event .header {
+        font-size: 20px;
+/*        height: 40px;*/
+    }
+
+    div[data-role="header"] {
+        margin-top: 50px;
+    }
+
+    .log.event .item-list {
+        list-style: none;
+    }
+
+    .field-container {
+        height: 50px;
+    }
+
+    .field-container.drugs {
+        height: 80px;
+    }
+
+    /*.field-container span.value {
+        font-size: 150px;
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: 150px;
+        margin-top: 100px;
+    }*/
+
+    .field {
+        margin: auto;
+    }
+
+    /*.field:not(input) {
+        display: block !important;
+    }*/
+
+    .field-container .k-slider {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    .field-container .field.dropdown {
+        position: inherit;
+        text-align: center;
+    }
+</style>

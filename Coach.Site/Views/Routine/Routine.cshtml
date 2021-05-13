@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Routine";
+}
+
+<link href="~/Content/ViewStyles/Routine/routine.css" rel="stylesheet" />
+<script src="~/Scripts/ViewScripts/Routine/routine.js"></script>
+
+<div id="routine-view-container" class="row no-gutters">
+    @*<div class="col">
+        <div class="d-flex justify-content-center">
+            <div id="calendar"></div>
+        </div>
+    </div>*@
+    <div class="col">
+        <div id="routine-container"></div>
+    </div>
+</div>
+
+<script id="routine-template" type="application/json">
+    <div id="routine-#:ID#" class="routine event">
+        <div class="routine-event-header" data-toggle="collapse" data-target=".routine.event .body">
+            <h2 class="text-center">
+                #:Text#
+            </h2>
+            <div class="completion-container">
+                <span data-toggle="tooltip" title="#:RoutineCompetionFractionString#">#:RoutineCompetionPercentageString#</span>
+            </div>
+            <button class="btn btn-outline-primary" type="button" onclick="onEditRoutineClick(#:ID#)">
+                <i class="far fa-pencil-alt"></i>
+            </button>
+        </div>
+        <div class="body collapse">
+            # $(TodoGroups).each(function (index, todoGroup) { #
+            <div class="todo-group-header">
+                <h6>
+                    #:todoGroup.Name#
+                    <span style="float:right;">
+                        #:todoGroup.CompletionString#
+                    </span>
+                </h6>
+            </div>
+            <ul class="todo-list">
+                # $(todoGroup.Todos).each(function (index, todo) { #
+                <li id="#:todo.LineItemID#">
+                    <div class="custom-control custom-switch">
+                        <input id="#:todo.SwitchID#" class="todo-switch custom-control-input" type="checkbox" data-eventtask-id="#:todo.EventTask.ID#" #:todo.CheckedProperty# onclick="onTodoSwitchToggled(event)" />
+                        <label class="custom-control-label" for="#:todo.SwitchID#">#:todo.Text#</label>
+                    </div>
+                </li>
+                # }); #
+            </ul>
+        @*<ul class="todo-list">
+            # $(todoGroup.Todos).each(function (index, todo) { #
+            <li id="#:todo.LineItemID#">
+                <div class="todo-container">
+                    <span class="label">#:todo.Text#</span>
+                    <div class="custom-control custom-switch">
+                        <input id="#:todo.SwitchID#" type="checkbox" data-eventtask-id="#:todo.EventTask.ID#" class="todo-switch custom-control-input" #:todo.CheckedProperty# onclick="onTodoSwitchToggled(event)" />
+                        <label class="custom-control-label"></label>
+                    </div>
+                </div>
+            </li>
+            # }); #
+        </ul>*@
+        # }); #
+    </div>
+    </div>
+</script>
+
+<script id="routine-edit-template" type="application/json">
+    <div id="routine-#:ID#" class="routine event">
+        <div class="routine-event-header">
+            <h2 class="text-center">
+                #:Text#
+                <button class="btn btn-outline-primary" type="button" onclick="onDoneEditRoutineClick(#:ID#)">Done</button>
+            </h2>
+        </div>
+        <ul class="todo-list">
+            # $(Todos).each(function (index, todo) { #
+            <li id="#:todo.LineItemID#" data-routine-id="#:ID#" data-todo-id="#:todo.ID#">
+                #:todo.Text#
+                <input id="#:todo.SwitchID#" data-eventtask-id="#:todo.EventTask.ID#" class="todo-switch k-switch" #:todo.CheckedProperty# />
+            </li>
+            # }); #
+        </ul>
+    </div>
+    </script>
