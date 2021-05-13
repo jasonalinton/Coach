@@ -7,6 +7,7 @@ Coach.Site/Web.config
 Coach.Site/Web.Debug.config
 Coach.Site/Web.Release.config
 OG/CoachServiceOG/Coach.ServiceOG/app.config
+Coach.Data/DataAccess/Items/Todo/GoogleTaskDAO.cs
 
 
 ## Ignore Visual Studio temporary files, build results, and
